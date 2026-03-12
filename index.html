@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stationery Store — Shop quality pens, notebooks, art supplies and more at great prices." />
+  <title>Stationery Store 🛒</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════ -->
+  <header class="navbar" role="banner">
+    <div class="container">
+      <a href="#" class="navbar-brand" aria-label="Stationery Store Home">
+        <span class="brand-icon" aria-hidden="true">✏️</span>
+        <span>Stationery Store</span>
+      </a>
+
+      <nav id="nav-menu" class="nav-menu" role="navigation" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#features">Features</a>
+        <a href="#footer">Contact</a>
+      </nav>
+
+      <div class="navbar-right">
+        <button
+          id="cart-icon"
+          class="cart-btn"
+          aria-label="Open shopping cart"
+          aria-haspopup="dialog"
+        >
+          🛒
+          <span id="cart-badge" class="cart-badge" aria-live="polite" aria-label="Cart items">0</span>
+        </button>
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════════════
+         HERO SECTION
+    ══════════════════════════════════════════════════ -->
+    <section id="home" class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-badge" aria-hidden="true">
+          <span>🌟</span> India's Favourite Stationery Shop
+        </div>
+        <h1 id="hero-heading">
+          Everything You Need to<br>
+          <span>Write, Create &amp; Organise</span>
+        </h1>
+        <p>Discover 35+ premium stationery products — pens, notebooks, art supplies, and more — all at unbeatable prices in INR ₹.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-hero-primary">Shop Now</a>
+          <a href="#features" class="btn btn-hero-outline">Learn More</a>
+        </div>
+        <div class="hero-stats" aria-label="Store statistics">
+          <div class="hero-stat">
+            <div class="stat-value">35+</div>
+            <div class="stat-label">Products</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value">9</div>
+            <div class="stat-label">Categories</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value">₹10</div>
+            <div class="stat-label">Starting From</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-value">Free</div>
+            <div class="stat-label">Easy Returns</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         FEATURES STRIP
+    ══════════════════════════════════════════════════ -->
+    <section id="features" class="features-strip" aria-label="Store features">
+      <div class="container">
+        <div class="feature-card">
+          <span class="feature-icon" aria-hidden="true">🚚</span>
+          <div class="feature-text">
+            <strong>Free Delivery</strong>
+            <span>On orders above ₹299</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon" aria-hidden="true">🔒</span>
+          <div class="feature-text">
+            <strong>Secure Payments</strong>
+            <span>100% safe checkout</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon" aria-hidden="true">↩️</span>
+          <div class="feature-text">
+            <strong>Easy Returns</strong>
+            <span>7-day return policy</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon" aria-hidden="true">⭐</span>
+          <div class="feature-text">
+            <strong>Premium Quality</strong>
+            <span>Trusted brands only</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         PRODUCTS SECTION
+    ══════════════════════════════════════════════════ -->
+    <section id="products" class="products-section" aria-labelledby="products-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="products-heading" class="section-title">Our Products</h2>
+          <span id="product-count" class="product-count" aria-live="polite" aria-atomic="true"></span>
+        </div>
+
+        <!-- Search + Sort -->
+        <div class="search-sort-bar" role="search">
+          <div class="search-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input
+              id="search-input"
+              type="search"
+              class="search-input"
+              placeholder="Search products…"
+              aria-label="Search products"
+              autocomplete="off"
+            />
+          </div>
+          <select id="sort-select" class="sort-select" aria-label="Sort products">
+            <option value="default">Sort: Default</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="name-asc">Name: A → Z</option>
+          </select>
+        </div>
+
+        <!-- Category Filters -->
+        <div
+          id="category-filters"
+          class="category-filters"
+          role="group"
+          aria-label="Filter by category"
+        >
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Product Grid -->
+        <div id="results-section">
+          <div
+            id="product-grid"
+            class="product-grid"
+            role="list"
+            aria-label="Product listing"
+          >
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer id="footer" class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="navbar-brand" aria-hidden="true">
+            <span class="brand-icon">✏️</span>
+            <span>Stationery Store</span>
+          </div>
+          <p>Your one-stop shop for quality stationery. Serving students, artists, and professionals across India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#products">All Products</a></li>
+            <li><a href="#products">Pens &amp; Pencils</a></li>
+            <li><a href="#products">Notebooks</a></li>
+            <li><a href="#products">Art Supplies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Stationery Store. All rights reserved.</p>
+        <p>Made with ❤️ in India | Built with HTML, CSS &amp; JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════
+       CART SIDEBAR
+  ══════════════════════════════════════════════════ -->
+  <div id="cart-overlay" class="cart-overlay" role="presentation" aria-hidden="true"></div>
+
+  <aside
+    id="cart-sidebar"
+    class="cart-sidebar"
+    role="dialog"
+    aria-label="Shopping cart"
+    aria-modal="true"
+    hidden
+  >
+    <div class="cart-header">
+      <h2 class="cart-title">🛒 Your Cart</h2>
+      <button id="cart-close" class="cart-close-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-body">
+      <div id="cart-empty" class="cart-empty-state">
+        <span class="empty-icon">🛒</span>
+        <p>Your cart is empty.</p>
+        <p>Add some stationery to get started!</p>
+      </div>
+      <div id="cart-items" class="cart-items-list" role="list" aria-label="Cart items"></div>
+    </div>
+
+    <div id="cart-footer" class="cart-footer" style="display:none">
+      <div class="cart-summary">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">₹0</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Delivery</span>
+          <span>Free</span>
+        </div>
+        <div class="cart-summary-row total">
+          <span>Total</span>
+          <span id="cart-total">₹0</span>
+        </div>
+      </div>
+      <div class="cart-actions">
+        <button class="btn btn-checkout">Proceed to Checkout</button>
+        <button id="clear-cart" class="btn btn-clear">Clear Cart</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════════════
+       PRODUCT DETAIL MODAL
+  ══════════════════════════════════════════════════ -->
+  <div
+    id="product-modal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Product details"
+    hidden
+  >
+    <div class="modal-box">
+      <div class="modal-top">
+        <button id="modal-close" class="modal-close-btn" aria-label="Close product details">✕</button>
+      </div>
+      <div id="modal-body">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       TOAST NOTIFICATIONS
+  ══════════════════════════════════════════════════ -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- ══════════════════════════════════════════════════
+       SCROLL TO TOP BUTTON
+  ══════════════════════════════════════════════════ -->
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Fix cart sidebar hidden attribute for accessibility toggle
+    const cartSidebar = document.getElementById('cart-sidebar');
+    document.getElementById('cart-icon').addEventListener('click', () => {
+      cartSidebar.removeAttribute('hidden');
+    });
+  </script>
+</body>
+</html>
