@@ -1,5 +1,9 @@
 # ✏️ Stationery Store
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20App-0d9488?style=for-the-badge&logo=github)](https://krunalambarte.github.io/stationery-app/)
+
+🌐 **Live Demo:** [https://krunalambarte.github.io/stationery-app/](https://krunalambarte.github.io/stationery-app/)
+
 A **complete, responsive stationery e-commerce web app** built with pure **HTML5, CSS3, and Vanilla JavaScript**. Works seamlessly on mobile, tablet, and desktop browsers — no frameworks, no build tools, no server required.
 
 ---
@@ -27,6 +31,11 @@ A **complete, responsive stationery e-commerce web app** built with pure **HTML5
 
 ## 🚀 How to Run
 
+### ▶️ Online (No Setup Required)
+Visit the live demo directly in your browser:
+**[https://krunalambarte.github.io/stationery-app/](https://krunalambarte.github.io/stationery-app/)**
+
+### 💻 Run Locally
 1. **Clone or download** this repository
 2. Open `index.html` in any modern browser (Chrome, Firefox, Safari, Edge)
 3. That's it — no server, no npm install, no build step needed!
